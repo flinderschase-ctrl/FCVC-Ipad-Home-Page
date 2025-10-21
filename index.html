@@ -61,57 +61,45 @@
     box-shadow: 0 6px 18px var(--shadow);
     transition: transform .08s ease-out, border-color .08s;
     backdrop-filter: blur(1px);
+  }<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Flinders Chase VC – Start Hub</title>
+<style>
+  :root{
+    --bg:#0b3d2e;       /* fallback colour behind image */
+    --card:#11543f;     /* tile colour */
+    --acc:#f2c14e;      /* accent (Parks gold) */
+    --text:#f7fafc;     /* near-white text */
+    --shadow: rgba(0,0,0,.25);
   }
-  a.tile:focus-visible, a.tile:hover{border-color:var(--acc); outline:none; transform: translateY(-1px);}
-  .tile h2{margin:0 0 10px; font-size:clamp(19px,2.4vw,26px); color:var(--acc)}
-  .tile p{margin:0; color:#e6eef4; font-size:clamp(15px,2vw,18px); line-height:1.35}
 
-  footer{opacity:.8; font-size:12px; margin-top:8px; text-align:center}
-
-  @media (max-width:600px){
-    .grid{grid-template-columns:1fr; gap:18px;}
-    .tile h2{font-size:22px}
-    .tile p{font-size:16px}
+  html,body{
+    height:100%; margin:0; color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    background: var(--bg) url("assets/bg.jpg") center/cover no-repeat fixed;
   }
-</style>
-</head>
-<body>
-  <div class="wrap">
-    <div class="brand">
-      <img src="assets/logo.jpg" alt="Department for Environment and Water">
-    </div>
 
-    <h1>Flinders Chase Visitor Centre</h1>
-    <p class="tag">Tap a button to continue</p>
+  /* soft dark overlay for readability over the photo */
+  body::before{
+    content:""; position:fixed; inset:0;
+    background: linear-gradient(180deg, rgba(0,0,0,.32), rgba(0,0,0,.42));
+    pointer-events:none; z-index:0;
+  }
 
-    <div class="grid">
-      <a class="tile" href="https://www.parks.sa.gov.au/" target="_self">
-        <h2>Parks SA – Home</h2>
-        <p>Main Parks SA website (start here)</p>
-      </a>
-      <a class="tile" href="https://www.parks.sa.gov.au/parks/kelly-hill-conservation-park" target="_self">
-        <h2>Kelly Hill Caves</h2>
-        <p>Parks SA – Kelly Hill Conservation Park</p>
-      </a>
-      <a class="tile" href="https://www.parks.sa.gov.au/experiences/seal-bay" target="_self">
-        <h2>Seal Bay Tours</h2>
-        <p>Parks SA – Seal Bay Experience</p>
-      </a>
-      <a class="tile" href="https://www.tourkangarooisland.com.au/" target="_self">
-        <h2>Tour Kangaroo Island</h2>
-        <p>Official tour options and bookings</p>
-      </a>
-      <a class="tile" href="https://www.kangarooisland.sa.gov.au/" target="_self">
-        <h2>Kangaroo Island Council</h2>
-        <p>Local services, notices, and info</p>
-      </a>
-      <a class="tile" href="https://www.sealink.com.au/kangaroo-island/" target="_self">
-        <h2>Kangaroo Island Ferry</h2>
-        <p>SeaLink ferry schedules &amp; bookings</p>
-      </a>
-    </div>
+  .wrap{
+    min-height:100%; position:relative; z-index:1;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    padding:28px 20px; gap:22px;
+  }
 
-    <footer>Start Hub • Flinders Chase VC</footer>
+  .brand{ display:flex; align-items:center; gap:16px; flex-direction:column; }
+  .brand img{
+    max-width:240px; width:60vw; height:auto; display:block;
+    filter: drop-shadow(0 6px 12px rgb
+
   </div>
 </body>
 </html>
